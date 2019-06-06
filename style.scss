@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    max-width: 1400px;
+    margin: 0 auto; 
+}
+.containerForTable{
+    margin: 20px auto;
+    .title{
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 20px auto;
+    }
+   .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .soritng{
+        display: flex;
+        justify-content: space-between;
+        span{
+            padding: 10px;
+            margin-left: 10px;
+            background-color: #e6e6e6;
+            color: black;
+            cursor: pointer;
+            &:hover{
+                background-color: green !important;
+                color: white !important;
+            }
+        }
+    }
+    .paginator{
+        display: flex;
+        justify-content: space-between;
+        .prew{
+            cursor: pointer;
+            padding: 10px
+        }
+        .paginatorWindow{
+            padding: 10px;
+        }
+        .next{
+            cursor: pointer;
+            padding: 10px
+        }
+    }
+    .delete{
+        padding: 10px 20px;
+        background-color: #f5f5f5;
+        color: black;
+        cursor: default;
+
+    }
+    .legend{
+        width: 150px;
+        position: relative;
+        padding: 20px 10px;
+        .body{
+            display: none;
+            position: absolute;
+            top: 40px;
+            background-color: #f9f9f9;
+            padding: 10px; 
+            p{
+                padding: 5px;
+            }
+
+        }
+        &:hover{
+            .body{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    }
+    
+}
+.messagebox{
+    width: 250px;
+    position: fixed;
+    top:0;
+    padding: 5px;
+    background-color: #dbdbdb;
+    h3{
+        width: 100%;
+        font-size: 12px;
+        text-align: center
+    }
+    .flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        height: 40px;
+        .ok{
+            background-color: green;
+            padding: 2px 25px;
+            border-radius: 5px;
+            cursor: pointer;  
+        }
+        .cancel{
+            background-color: red;
+            padding: 2px 25px;
+            border-radius: 5px;
+            cursor: pointer;    
+        }
+    }
+}
+.delButton{
+    cursor: pointer;
+
+    padding: 0px 10px;
+    background-color: green;
+    color: white;
+}
