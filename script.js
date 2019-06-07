@@ -316,7 +316,7 @@ class Table{
                             body.removeChild(messageBox);
                             this.i = this.i-this.step+1;
                             paginatorWindow.innerHTML = (this.i+1) + '-' + (this.i+this.step) + ' of ' + this.data.length;
-                            console.log(1)
+                            
                             this.createTable(tbody);
                             this.handlers();
                             
@@ -330,13 +330,13 @@ class Table{
                         
                     })
                 }else{
-                    console.log(this.listForDelete);
+                  
                     for(let i = 0; i<this.listForDelete.length; i++){
                         if(this.listForDelete[i] == parseInt(el.value)){
                             this.listForDelete.splice(i, 1);
                         }
                     }
-                    console.log(this.listForDelete);
+                   
                     tdColor.setAttribute('bgcolor', this.color[el.value]);
                     const td = el.closest('tr').querySelectorAll('td');
                     const del = td[td.length - 1];
@@ -395,7 +395,7 @@ class Table{
                     body.removeChild(messageBox);
                     this.keyButtonDelet = true;
                     for(let i =0; i<this.data.length; i++){
-                        //console.log(this.data[i].id)
+              
                         this.listForDelete.forEach(el=>{
                             if(this.data[i].id == el){
                                 this.data.splice(i, 1);
@@ -435,7 +435,7 @@ window.onload = function(){
         return respon.json(); 
     }).then(answer=>{
         const table = new Table (answer);
-        console.log(table);
+
         table.setKey(legend);
         table.createKey();
         table.createHeaderTable(tbody, title, select);
@@ -476,7 +476,7 @@ window.onload = function(){
                 table.setCurrentStep(step);
                 
                 table.setI(-1*(table.getStep()*2-1));
-                console.log(table)
+     
                 table.createTable(tbody);
                 table.handlers();
                 paginatorWindow.innerHTML = (table.getI()-table.getStep()+2) + '-' + step + ' of ' + table.getDataLength();
@@ -553,7 +553,7 @@ window.onload = function(){
                     dataKey.push(val);
                 })
 
-                console.log(dataKey);
+
                 for(let a1 = 0; a1<dataKey.length; a1++){
                     if(dataKey[a1] == el.getAttribute('value')){
                         dataKey.splice(a1, 1);
@@ -562,14 +562,12 @@ window.onload = function(){
                 dataKey.reverse();
                 dataKey.push(el.getAttribute('value'));
                 dataKey.reverse();
-                console.log(dataKey);
 
                 table.chageKey(dataKey);
                 table.chageI();
                 table.createTable(t);
                 table.handlers();
 
-                console.log(Key);
                 const tr = document.getElementsByName(el.getAttribute('value'))
                 let list = [];
                 let listKey = {};
@@ -587,14 +585,14 @@ window.onload = function(){
                 list.forEach(el=>{
                     ListFinal.push(listKey[el])
                 })
-                console.log(ListFinal);
+
                 const tbody = document.querySelector('tbody')
                 const trTbody = tbody.querySelectorAll('tr')
                 for(let i = 1; i<trTbody.length; i++){
                     tbody.removeChild(trTbody[i]);
                 }
                 for(let i = 0; i<ListFinal.length; i++){
-                    console.log(5)
+
                     const tr = document.createElement("tr");
                     tr.setAttribute('name', 'body');
                     if(i%2 == 0){
